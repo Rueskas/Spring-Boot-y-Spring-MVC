@@ -35,8 +35,16 @@ public class EmpleadoServiceDB implements EmpleadoService {
 		return repositorio.save(e) != null;
 	}
 	
+	/*
 	public List<Empleado> buscar(String cadena){
 		return repositorio.findByNombreContainsIgnoreCaseOrEmailContainsIgnoreCaseOrTelefonoContainsIgnoreCase(cadena, cadena, cadena);
 	}
+	*/
+	
+
+	public List<Empleado> buscar(String cadena){
+		return repositorio.findByContains(cadena);
+	}
+	
 		
 }
